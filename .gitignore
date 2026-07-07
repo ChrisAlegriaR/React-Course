@@ -1,0 +1,24 @@
+# Logs
+course/logs
+course/*.log
+course/npm-debug.log*
+course/yarn-debug.log*
+course/yarn-error.log*
+course/pnpm-debug.log*
+course/lerna-debug.log*
+
+course/node_modules
+course/dist
+course/dist-ssr
+course/*.local
+
+# Editor directories and files
+course/.vscode/*
+course/!.vscode/extensions.json
+course/.idea
+course/.DS_Store
+course/*.suo
+course/*.ntvs*
+course/*.njsproj
+course/*.sln
+course/*.sw?
