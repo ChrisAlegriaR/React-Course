@@ -1,18 +1,9 @@
 # React + Vite
+## Vite
+Vite es una herramienta de compilación que tiene como objetivo proporcionar una experiencia de desarrollo mas rapida y agil para proyectos web modernos. Por lo que vite se puede definir como una plantilla sobre la cual los desarrolladores pueden crear y trabajar en sus proyectos sin la necesidad de crear de manera manual cada apartado, siento Vite compatible con diversas tecnologias, entre ellas REACT. Por lo que de forma mas simplificada Vit se puede definir como un servidor local de desarrollo que permite armas una estructura, en este caso de REACT, atravez de una plantilla facilitando la creacion del proyecto, donde mediante la ejecucion de una sola linea/comando en nuestra terminal nos permitira crear y armar la estructura del proyecto para nbosotors como programadores emepezar desde una plantilla pre armada.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esto es extremadamente util ya que todas las aplicaciones React tienen y comparten una misma base, la cual mediante Vit la podemos crear mediante la ejecicoion de una sola linea de codigo, ademas de que Vit proporciona diferentes mejoras realmente utiles como HMR(Hot Module Replacement), el cual solamente modificara en nuestra pagina y sertvidor en ejecucion aquellas secciones, elementos o componentes que modifiquemos, esto sin actualizar toda la pagfina y actualizando solo y unicamente dichos elementos modificados.
 
-Currently, two official plugins are available:
+## React
+React es una libreria
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
