@@ -17,5 +17,6 @@ Para proceder con la ejecucion de Vite y poder asi crerar nuestro proyecto React
 - **vite@latest:** Este comando es fundamental, ya que indica a Node Package Manager(npm) que creara un nuevo proyecto mediante la ultima version de Vite, el cual este podria implicar que esta utilizara versiones superiores de Node.JS a la minima para funcionar.
 
 # React
-React es una libreria
+React es una libreria de JavaScript la cual
+
 
