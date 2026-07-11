@@ -22,6 +22,8 @@ Por lo que una vez ejecutado dicho comando la consola nos arrojara diversas opci
 ◆  Project name:
 │  vite-project
 ```
+ 
+Posteriroemtne Vite mediante la consola nos preguntara la tecnologia quew utilizaremos en nuestor proyecto, ya que como bien se coment oantes Vite es compatrible y crea asi mismo proyectros de diferentes tecnologicas, entre estas esta React.
 
 ```bash
 ◆  Select a framework:
@@ -40,6 +42,8 @@ Por lo que una vez ejecutado dicho comando la consola nos arrojara diversas opci
 │  ↑/↓ to navigate • Enter: confirm
 └
 ```
+Una vez seleccionada la tecnologia se nos preguntara respecto a el tipo de lenguaje que deseamos implementar en nuestro proyecto, esto debido a que Vite en el caso de usar React nos permite crear proyectos React con JavaScript o TypeScript, por lo que se nos preguntara cual de estos dos lenguajes deseamos utilizar en nuestro proyecto. De igual manera se encuntran las opciones de lenguaje junto con react compiler el cual e s un compilador de React que permite a los desarrolladores escribir código React utilizando una sintaxis más concisa y expresiva, lo que puede mejorar la legibilidad y mantenibilidad del código.
+
 ```bash
 ◆  Select a variant:
 │  ● TypeScript
@@ -57,6 +61,8 @@ Por lo que una vez ejecutado dicho comando la consola nos arrojara diversas opci
 └
 ```
 
+Adicionalmente Vite nos preguntara que linter deseamos utilizar en nuestro proyecto, ya que Vite nos permite seleccionar entre dos linters, el cual un linter es una herramienta que analiza el código fuente para identificar errores, problemas de estilo y posibles mejoras en la calidad del código. Los linters ayudan a mantener un código más limpio y consistente, lo que facilita la colaboración entre desarrolladores y reduce la probabilidad de errores en el software. Por lo que se nos permite seleccionar entre Oxlint y ESLint, donde la diferencia entre estos es que ESLint es un linter ampliamente utilizado y altamente configurable para JavaScript y JSX, mientras que Oxlint es un linter más reciente y menos conocido, diseñado específicamente para proyectos de React y TypeScript, ofreciendo reglas y configuraciones optimizadas para estos entornos.
+
 ```bash
 ◆  Which linter to use?
 │  ● Oxlint
@@ -64,7 +70,9 @@ Por lo que una vez ejecutado dicho comando la consola nos arrojara diversas opci
 └
 ```
 
-bash```
+Por ultimo Vite nos preguntara si deseamos instalar las dependencias necesarias para el proyecto y asi mismo iniciar el proyecto de manera automatica, o si deseamos instalar dichas dependencias de manera manual y posteriormente iniciar el proyecto.
+
+```bash
 ◆  Install with npm and start now?
 │  ● Yes / ○ No
 └
