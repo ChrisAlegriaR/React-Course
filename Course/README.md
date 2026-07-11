@@ -16,6 +16,61 @@ Para proceder con la ejecucion de Vite y poder asi crerar nuestro proyecto React
 
 - **vite@latest:** Este comando es fundamental, ya que indica a Node Package Manager(npm) que creara un nuevo proyecto mediante la ultima version de Vite, el cual este podria implicar que esta utilizara versiones superiores de Node.JS a la minima para funcionar.
 
+Por lo que una vez ejecutado dicho comando la consola nos arrojara diversas opciones las cuales nos indicara en seleciconar entre dichas opciones para crear nuestro proyecto/plantilla. Donde el primer dato a solicitarnos Vite sera el nombre del proyecto con el cual creara el mismo y dara de altya diversos archivos importantes, entree ellso el nombre inclusive de la carpeta del proyecto.
+
+```bash
+◆  Project name:
+│  vite-project
+```
+
+```bash
+◆  Select a framework:
+│  ● Vanilla
+│  ● Vue
+│  ● React
+│  ● Preact
+│  ● Lit
+│  ● Svelte
+│  ● Solid
+│  ● Ember
+│  ● Qwik
+│  ● Angular
+│  ● Marco
+│  ...
+│  ↑/↓ to navigate • Enter: confirm
+└
+```
+```bash
+◆  Select a variant:
+│  ● TypeScript
+│  ● TypeScript + React Compiler
+│  ● JavaScript
+│  ● JavaScript + React Compiler
+│  ● RCS (npm exec tiged vitejs/vite-plugin-react/packages plugin-rsc/examples/starter)
+│  ● React Router v7 ↗ https://reactrouter.com (npm create react-router@latest)
+
+│  ● TanStack Router ↗ https://tanstack.com/router (npm exec -- @tanstack/cli@latest create TARGET_DIR --framework react --interactive)
+│  ● RedwoodSDK ↗ https://rwsdk.com (npm create rwsdk@latest)
+│  ● Vike ↗ https://vike.dev (npm create -- vike@latest --react)
+│  ...
+│  ↑/↓ to navigate • Enter: confirm
+└
+```
+
+```bash
+◆  Which linter to use?
+│  ● Oxlint
+│  ● ESLint
+└
+```
+
+bash```
+◆  Install with npm and start now?
+│  ● Yes / ○ No
+└
+```
+
+
 # React
 React es una libreria de JavaScript la cual
 
