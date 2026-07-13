@@ -42,7 +42,7 @@ Posteriroemtne Vite mediante la consola nos preguntara la tecnologia quew utiliz
 │  ↑/↓ to navigate • Enter: confirm
 └
 ```
-Una vez seleccionada la tecnologia se nos preguntara respecto a el tipo de lenguaje que deseamos implementar en nuestro proyecto, esto debido a que Vite en el caso de usar React nos permite crear proyectos React con JavaScript o TypeScript, por lo que se nos preguntara cual de estos dos lenguajes deseamos utilizar en nuestro proyecto. De igual manera se encuntran las opciones de lenguaje junto con react compiler el cual e s un compilador de React que permite a los desarrolladores escribir código React utilizando una sintaxis más concisa y expresiva, lo que puede mejorar la legibilidad y mantenibilidad del código.
+Una vez seleccionada la tecnologia se nos preguntara respecto a el tipo de lenguaje que deseamos implementar en nuestro proyecto, esto debido a que Vite en el caso de usar React nos permite crear proyectos React con JavaScript o TypeScript, por lo que se nos preguntara cual de estos dos lenguajes deseamos utilizar en nuestro proyecto. De igual manera se encuntran las opciones de lenguaje junto con react compiler el cual e s un compilador de React que permite a los desarrolladores escribir código React utilizando una sintaxis más concisa y expresiva, lo que puede mejorar la legibilidad y mantenibilidad del código. Ademas de que React Compiler puede optimizar el rendimiento de las aplicaciones React al realizar transformaciones en tiempo de compilación, lo que puede resultar en un código más eficiente y rápido y al momento de generar nuestro builder de nuestro proyecto, React Compiler puede aplicar optimizaciones específicas para mejorar el rendimiento de la aplicación final.
 
 ```bash
 ◆  Select a variant:
@@ -80,6 +80,6 @@ Por ultimo Vite nos preguntara si deseamos instalar las dependencias necesarias 
 
 
 # React
-React es una libreria de JavaScript la cual
+React es una libreria de JavaScript de codigo abierto desarrollada por Facebook, la cual contiene mucha interactividad hacia el usuario, siendoi esta reactiva. Donde ademas React se aprovecha de un componente y de JSX que es un tipo de HTML con esteroides. Donde de manera adicional React es una libreria que permite a los desarrolladores crear interfaces de usuario de manera eficiente y escalable, utilizando un enfoque basado en componentes. Esto significa que las aplicaciones se construyen a partir de piezas reutilizables de código llamadas componentes, lo que facilita el mantenimiento y la evolución del software, sienbdo ademas esta tecnologia una de las mas solicitadas y usadas en el mercado.
 
 
