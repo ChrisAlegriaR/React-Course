@@ -78,8 +78,13 @@ Por ultimo Vite nos preguntara si deseamos instalar las dependencias necesarias 
 └
 ```
 
+## Levantamiento de proyecto mediante Vite.
+Una vez tengamos nueastro proyecto React creado mediante Vite, tendremos que levantar o ejecutar nuestro proyecto en nuestro servidor local, para asi poder visualizar y trabajar en nuestro proyecto React. Por lo que para levantar nuestro proyecto mediante Vite, primero tendremos que ingresar a la carpeta de nuestro proyecto mediante el comando `cd nombre-de-nuestro-proyecto`, donde dicho comando nos permitira ingresar a la carpeta de nuestro proyecto y asi mismo poder ejecutar el siguiente comando `npm run dev`, el cual mediante la paqueteria npm(Node Package Manager) nos permitira levantar nuestro proyecto en un servidor local, el cual nos proporcionara una url para poder visualizar nuestro proyecto en un navegador web.
 
-# React
+# React.
 React es una libreria de JavaScript de codigo abierto desarrollada por Facebook, la cual contiene mucha interactividad hacia el usuario, siendoi esta reactiva. Donde ademas React se aprovecha de un componente y de JSX que es un tipo de HTML con esteroides. Donde de manera adicional React es una libreria que permite a los desarrolladores crear interfaces de usuario de manera eficiente y escalable, utilizando un enfoque basado en componentes. Esto significa que las aplicaciones se construyen a partir de piezas reutilizables de código llamadas componentes, lo que facilita el mantenimiento y la evolución del software, sienbdo ademas esta tecnologia una de las mas solicitadas y usadas en el mercado.
+
+## Diferencia entre React Doom y React Native.
+Existen dos versiones popularmente utuilizadas de React, las cuales son React Doom y React Native, donde la diferencia entre estas dos versiones es que React Doom es una libreria de JavaScript que permite a los desarrolladores crear interfaces de usuario para aplicaciones web, mientras que React Native es un framework de desarrollo móvil que permite a los desarrolladores crear aplicaciones móviles nativas para iOS y Android utilizando JavaScript y React. Por lo que la diferencia principal entre estas dos versiones es el tipo de plataforma para la cual estan diseñadas, siendo React Doom para aplicaciones web y React Native para aplicaciones moviles.
 
 
