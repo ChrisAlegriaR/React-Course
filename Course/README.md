@@ -87,4 +87,5 @@ React es una libreria de JavaScript de codigo abierto desarrollada por Facebook,
 ## Diferencia entre React Doom y React Native.
 Existen dos versiones popularmente utuilizadas de React, las cuales son React Doom y React Native, donde la diferencia entre estas dos versiones es que React Doom es una libreria de JavaScript que permite a los desarrolladores crear interfaces de usuario para aplicaciones web, mientras que React Native es un framework de desarrollo móvil que permite a los desarrolladores crear aplicaciones móviles nativas para iOS y Android utilizando JavaScript y React. Por lo que la diferencia principal entre estas dos versiones es el tipo de plataforma para la cual estan diseñadas, siendo React Doom para aplicaciones web y React Native para aplicaciones moviles.
 
+# JSX
 
