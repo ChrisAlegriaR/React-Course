@@ -125,3 +125,13 @@ class nombreComponente extends Component { //* Declaración del componente de cl
 } //* Fin del componente.
 
 export { nombreComponente }; //* Exporta el componente de clase mediante export nombrado.
+
+// ~Importacion de componentes.
+// ~La importacion de nuestros componentes es un paso fundamental para poder utilizarlos dentro de otros archivos JSX o TSX de nuestra aplicación. React permite importar componentes utilizando la misma sintaxis de módulos de JavaScript, ya sea mediante `import` para exportaciones nombradas o `import` sin llaves para exportaciones por defecto. Por lo que el uso de extas varia de como exportamos nuestros componentes. Es importante tener en cuenta que al importar un componente, debemos especificar correctamente la ruta relativa al archivo donde se encuentra, así como el nombre exacto del componente si se trata de una exportación nombrada. Donde el uso de import sin usar llaves `{}` es para exportaciones por defecto mediante el uso de `export default`, mientras que el uso de llaves `{}` es para exportaciones nombradas mediante el uso de `export`.
+// ?Importacion de un solo componente por archivo.
+// ?Cuando un archivo contiene únicamente un componente principal exportado mediante `export default`, la importación de dicho componente se realiza sin utilizar llaves `{}`. Esto permite que el nombre del componente importado pueda ser diferente al nombre original del componente, ofreciendo flexibilidad en la nomenclatura dentro del archivo donde se realiza la importación. Por lo que igualmente podemos usar un nombre diferente al original del componente, ya que no es necesario que coincidan los nombres, ya que dicho archivo solo exporta un componente principal. Sin embargo, es recomendable mantener la coherencia en los nombres para mejorar la legibilidad del código y facilitar su mantenimiento.
+import nombreComponente from './ruta/del/componente'; //* Importa un componente exportado por defecto desde la ruta especificada.
+
+// ?Importacion de mas de un componente por archivo.
+// ?Cuando un archivo contiene múltiples componentes exportados mediante `export`, la importación de dichos componentes requiere el uso de llaves `{}`. En este caso, es obligatorio utilizar exactamente los mismos nombres con los que fueron exportados, ya que las llaves indican que se trata de exportaciones nombradas.
+import { nombreComponente1, nombreComponente2 } from './ruta/del/componente'; //* Importa múltiples componentes exportados mediante export nombrado desde la ruta especificada.
