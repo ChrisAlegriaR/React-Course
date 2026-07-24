@@ -16,14 +16,14 @@ let objeto = { nombre: "Jose", edad: 19}
 // ?Renderizadop de variables.
 // ?Para poder renderizar los vcalores o nuestras variables dentro del DOM de nuestra pagina es indispensable y necesario el uso de llabves debntro del componente y la seccion a renderizar, donde dentro de estas podemos siemplmente mandar llamar dichas variables o incluso ejecutar codigo javascript directamente, por lo que bien como se menciono previamente unicamente JSX podra renderizxar variables dieferentes al tipo objetc.
 // &Renderizado de variables diferentes a object.
-// &
+// &Como bien sabemos las variables de tipo string, number, array, boolean y funciones pueden ser renderizadas directamente en el DOM de nuestra pagina, por lo que para poder renderizar estas variables es necesario declararlas previamente y luego mandarlas a llamar dentro de las llaves "{}" dentro del componente y la seccion a renderizar. Ademas cabe mencionar que las funciones solo podran ser renderizadas si estas retornan un valor compatible con el DOM, por lo que si la funcion no retorna nada o retorna un valor no compatible con el DOM no podra ser renderizada.
 let string = "Hola mundo!";
 let number = 12345;
 let array = [1, 2, 3, 4, 5];
 let boolean = true;
 let funcion = () => 1 + 1;
 
-function nombreComponente() {
+function NombreComponente() {
     return (
         <ul>
             <li>{string}</li>
@@ -35,4 +35,14 @@ function nombreComponente() {
     );
 }
 
-export default nombreComponente;
+export default NombreComponente;
+
+// &Renderizado de variables de tipo object.
+// &Como bien sabemos las variables de tipo object no pueden ser renderizadas directamente en el DOM de nuestra pagina, por lo que si se desea renderizar este tipo de variables es necesario convertirlas a string o JSON para poder ser renderizadas en el DOM de la pagina. Ademas cabe mencionar que las funciones solo podran ser renderizadas si estas retornan un valor compatible con el DOM, por lo que si la funcion no retorna nada o retorna un valor no compatible con el DOM no podra ser renderizada. Por lo que para poder transformar un objeto a string o JSON es necesario utilizar el metodo JSON.stringify() el cual convierte un objeto a una cadena de texto en formato JSON, por lo que este metodo es muy util para poder renderizar objetos en el DOM de nuestra pagina.
+let objeto = { nombre: "Jose", edad: 19}
+
+function NombreComponente() {
+    return (<h1>{JSON.stringify(objeto)}</h1>);
+}
+
+export default NombreComponente;
