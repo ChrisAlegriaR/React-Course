@@ -25,7 +25,7 @@ let funcion = () => 1 + 1; //* Función que retorna un número.
 
 function NombreComponente() { //* Declaración del componente funcional.
     return ( //* Retorna el contenido JSX.
-        <ul> {/* Lista donde se mostrarán los distintos ejemplos de renderizado. */}
+        <ul> //* Lista donde se mostrarán los distintos ejemplos de renderizado.
             <li>{string}</li> //* React renderiza directamente el contenido de la cadena de texto.
             <li>{number}</li> //* Los valores numéricos también pueden renderizarse directamente.
             <li>{array}</li> //* React renderiza cada elemento del arreglo de manera consecutiva siempre que sean valores compatibles.
