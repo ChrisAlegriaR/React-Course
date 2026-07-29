@@ -65,4 +65,3 @@ function NombreComponente() { //* Declaración del componente.
 } //* Fin del componente.
 
 export default NombreComponente; //* Exporta el componente.
-
