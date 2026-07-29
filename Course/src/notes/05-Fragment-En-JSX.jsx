@@ -20,7 +20,6 @@ export default NombreComponente; //* Exporta el componente como exportación por
 // ?Retorno de varios elementos en componente sin implementar Fragment.
 // ?Si intentamos retornar varios elementos hermanos directamente desde un componente sin envolverlos dentro de un único nodo padre, React generará un error durante la compilación. Esto ocurre porque JSX exige que exista un único elemento raíz sobre el cual React pueda construir correctamente el árbol de renderizado. Aunque visualmente los elementos parezcan independientes, internamente React necesita un solo punto de entrada para representar el componente.
 function NombreComponente() { //* Declaración del componente.
-
     // return ( //* Este retorno provocaría un error de compilación.
     //     <h1>¡Hola Mundo!.</h1> //* Primer elemento hermano.
     //     <h2>¡Hola Vida!.</h2> //* Segundo elemento hermano.
@@ -66,3 +65,4 @@ function NombreComponente() { //* Declaración del componente.
 } //* Fin del componente.
 
 export default NombreComponente; //* Exporta el componente.
+
