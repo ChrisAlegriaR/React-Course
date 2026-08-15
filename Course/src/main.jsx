@@ -4,10 +4,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 // import './index.css'
-import { NombreComponente2 } from './notes/10-Condicional-&-Ternario'
+import Listado from './notes/11-Map'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <NombreComponente2 />
+    <Listado />
   </StrictMode>,
 )
