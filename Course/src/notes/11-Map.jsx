@@ -39,5 +39,7 @@ function Listado() {
 export default Listado;
 
 // ~Key unica por iteracion de map.
-// ~
+// ~Ahora bien, nosotros podemos simplemente crear e implementar el uso de Map como el ejemplo anterior y si bien va afuncionar de manera correcta React nos arrojara un error, esto debido a que al momento de Map retornar un elemento por cada iteracion, React necesita que cada elemento tenga una key unica para poder identificarlo y asi poder hacer un seguimiento de este, por lo que si no le pasamos una key unica React nos arrojara un error, por lo que para solucionar esto simplemente podemos pasarle a nuestro componente Item una key unica, la cual puede ser el nombre del curso o cualquier otra propiedad que sea unica para cada objeto dentro de nuestro arreglo, de esta manera React podra identificar cada elemento y no nos arrojara ningun error. Si bien esta key a nostoros no nos sirve de nada, React la utiliza para poder identificar cada elemento y asi poder hacer un seguimiento de este, por lo que es importante que cada elemento tenga una key unica. Por lo que el codigo final quedaria de la siguiente manera:
+{arreglo.map(item => <Item nombre={item.nombre} visto={item.visto} key={item.nombre}></Item>)}
+
 
