@@ -1,45 +1,46 @@
 // ^Map
-// ^Como bien sbaemos el uso de Map es propio de JavaScript, por lo que para recapitular un poco, este es una especie de ciclo el cual recorre absolutamente todos los elementos dentro del elemento al que le apliquemos el map mediante nombreVariable.map, por lo que normalmente map de manera por dfefecto retornara siempre lo que especificquemos dentro de este, por lo que en si map es una propiedad o una especi de ciclo for o if que se repetira hasta haber pasado atravez de cada elemento denmtro de nuestra variable, donde este por cada iteracion podra regresdar algo. Ahora bien podemos aplicar esta misma analitica y funcoion a useState e inlcusive retornar por cadas iteracion de map un elemento a renderizar. ya que como mecionamos maop no es necesario definir un return ya que este lo hara dem anera automatica. Recortdemois que la ewstrucrua de map es nombreVariable.map(item => accionesARealizarYretornae).
-// ~Ejemplo de implmenetacion de Map mediante useState y renderisaciones.
-// ~Ahora bien usando el ejemplo de la seccion 10, podemos ver que contamos con 2 diferentes componentes teniedo item que renderiza un item el cual tiene como objetivo este ser llamado y mediante el paso de propedades (props) mo0strar informacion, por lo que ahora biern dentro de el componente padre listado definimos 1 variables de nombre listadoCUrsos la cual contentendra o es un array de objetos que contieen cada objeto nombre curso y si ya fue visto, pósteriormente mediante use state definimos una variable y su funcoion donde le decimos que tome el valor de luistadocursos. Posteriormente dentro del renderizado de nuesotro componewnte mediante el uso de useSte que tiene los mismos valores que listadoCursos usaremos un map donde mediante arreglo.map(item => accionesARealizarYretornae), podras retornar cosas ocmo comentamos previamente asi que directamente podemos definir el componente item pasado por item del mapa la info nombre y visto para que retorne el itemp or casa objeto en useSate
-import { useState } from "react"
+// ^Como bien sabemos, el uso de `map()` es propio de JavaScript, por lo que para recapitular un poco, este método pertenece principalmente a los arreglos y nos permite **recorrer cada uno de los elementos que existen dentro de un array**, ejecutando una determinada acción durante cada iteración. Su estructura general consiste en utilizar el nombre de nuestra variable seguido de `.map()`, por ejemplo `nombreVariable.map()`. A diferencia de un ciclo `for` tradicional, `map()` está diseñado específicamente para recorrer un arreglo y, además, **generar un nuevo arreglo a partir de los resultados obtenidos en cada una de sus iteraciones**. Es decir, `map()` recorrerá todos los elementos existentes dentro del arreglo y, por cada uno de ellos, ejecutará la función que nosotros definamos, pudiendo retornar un nuevo valor, modificar la forma en la que mostramos la información o incluso generar elementos completos de JSX. Por defecto, `map()` siempre construirá un nuevo arreglo utilizando los valores retornados durante cada iteración, por lo que resulta especialmente útil cuando queremos transformar los elementos de un array sin modificar directamente el arreglo original. Ahora bien, podemos aplicar esta misma lógica dentro de React e incluso utilizar `map()` para realizar **renderizado dinámico**, retornando en cada iteración un elemento o componente diferente que posteriormente será representado dentro del DOM. En el caso de las funciones flecha, `map()` no necesita que escribamos explícitamente un `return` cuando utilizamos una sola expresión después de `=>`, ya que JavaScript utiliza un **return implícito**. Por esta razón, debemos recordar que la estructura más básica de `map()` es `nombreVariable.map(item => accionesARealizarYRetornar)`, donde `item` representa el elemento actual de la iteración y después de `=>` especificamos aquello que deseamos realizar y retornar.
+// ~Ejemplo de implementación de Map mediante useState y renderizaciones.
+// ~Ahora bien, utilizando el ejemplo de la sección anterior podemos observar que contamos con dos componentes diferentes: `Item`, cuyo objetivo es renderizar un solo elemento de nuestra lista, y `Listado`, que funcionará como componente padre y será el encargado de almacenar y recorrer toda la información. El componente `Item` recibe mediante Props los valores `nombre` y `visto`, permitiéndonos reutilizarlo para representar diferentes cursos cambiando únicamente la información que recibe. Posteriormente, dentro del componente padre `Listado`, declaramos una variable llamada `listadoCursos`, la cual contiene un **array de objetos**. Cada uno de estos objetos representa un curso y contiene dos propiedades: `nombre`, que almacena el nombre del curso, y `visto`, que almacena mediante un booleano si dicho curso ya fue completado o no. Después, utilizando `useState`, declaramos un estado llamado `arreglo` junto con su función para actualizarlo, inicializando dicho estado con el contenido de `listadoCursos`. Esto significa que `arreglo` tendrá exactamente la misma estructura que nuestra variable original, es decir, un array compuesto por diferentes objetos. Posteriormente, dentro del JSX que retorna nuestro componente, podemos recorrer este estado utilizando `map()`. Como mencionamos previamente, `map()` ejecutará una iteración por cada objeto existente dentro de `arreglo`, y en cada una de esas iteraciones podremos retornar algo diferente. En este caso, aprovecharemos precisamente esa capacidad para retornar nuestro componente `Item`, pasando como Props las propiedades `nombre` y `visto` correspondientes al objeto actual. Por lo tanto, en cada iteración `item` representará uno de los objetos del arreglo y podremos acceder a sus propiedades mediante `item.nombre` y `item.visto`, logrando así generar automáticamente un componente `Item` por cada objeto almacenado dentro del estado.
+import { useState } from "react" //* Se importa useState para poder almacenar el arreglo de cursos dentro del estado del componente.
 
-function Item({nombre, visto}) {
-    return (
-        <>
-            <li>{nombre}: {visto ? '✔️' : '❌'}</li>
-        </>
-    );
-}
+function Item({nombre, visto}) { //* Se declara el componente Item y se desestructuran los Props nombre y visto recibidos desde el componente padre.
+    return ( //* Se retorna la estructura JSX correspondiente a un solo elemento de la lista.
+        <> //* Fragment utilizado para agrupar el contenido sin generar un nodo adicional.
+            <li>{nombre}: {visto ? '✔️' : '❌'}</li> //* Se muestra el nombre del curso y se utiliza un ternario para indicar si ya fue visto o todavía no.
+        </> //* Fin del Fragment.
+    ); //* Fin del return.
+} //* Fin del componente Item.
 
-function Listado() {
-    let listadoCursos = [
-        {nombre: "Instalaciones necesarias.", visto: true},
-        {nombre: "Uso de Vite.", visto: true},
-        {nombre: "Componentes.", visto: true},
-        {nombre: "Variables en JSX.", visto: true},
-        {nombre: "Props.", visto: true},
-        {nombre: "Eventos." , visto: true},
-        {nombre: "useState.", visto: true},
-        {nombre: "Redux.", visto: false},
-        {nombre: "customHooks", visto: false}
-    ]
+function Listado() { //* Se declara el componente padre encargado de almacenar y recorrer todos los cursos.
+    let listadoCursos = [ //* Se declara un arreglo que almacenará los objetos con la información de cada curso.
+        {nombre: "Instalaciones necesarias.", visto: true}, //* Primer objeto con el nombre del curso y su estado de completado.
+        {nombre: "Uso de Vite.", visto: true}, //* Segundo curso marcado como visto.
+        {nombre: "Componentes.", visto: true}, //* Tercer curso marcado como visto.
+        {nombre: "Variables en JSX.", visto: true}, //* Curso de Variables en JSX marcado como visto.
+        {nombre: "Props.", visto: true}, //* Curso de Props marcado como visto.
+        {nombre: "Eventos." , visto: true}, //* Curso de Eventos marcado como visto.
+        {nombre: "useState.", visto: true}, //* Curso de useState marcado como visto.
+        {nombre: "Redux.", visto: false}, //* Curso de Redux que todavía no ha sido visto.
+        {nombre: "customHooks", visto: false} //* Curso de customHooks que todavía no ha sido visto.
+    ] //* Fin del arreglo listadoCursos.
 
-    const [arreglo, setarreglo] = useState(listadoCursos);
-    return (
-        <>
-            <h1>Maps</h1>
-            <ol>
-                {arreglo.map(item => <Item nombre={item.nombre} visto={item.visto}></Item>)}
-            </ol>
-        </>
-    );
-}
+    const [arreglo, setarreglo] = useState(listadoCursos); //* Se crea un estado llamado arreglo y se inicializa utilizando el contenido de listadoCursos.
+    return ( //* Se retorna la interfaz visual del componente Listado.
+        <> //* Fragment que agrupa el contenido del componente.
+            <h1>Maps</h1> //* Encabezado que identifica la demostración del método map().
+            <ol> //* Lista ordenada donde se renderizarán dinámicamente todos los cursos.
+                {arreglo.map(item => <Item nombre={item.nombre} visto={item.visto}></Item>)} //* map() recorre cada objeto del arreglo y por cada iteración retorna un componente Item enviándole las propiedades correspondientes.
+            </ol> //* Fin de la lista ordenada.
+        </> //* Fin del Fragment.
+    ); //* Fin del return.
+} //* Fin del componente Listado.
 
-export default Listado;
+export default Listado; //* Se exporta el componente Listado como exportación por defecto.
 
-// ~Key unica por iteracion de map.
-// ~Ahora bien, nosotros podemos simplemente crear e implementar el uso de Map como el ejemplo anterior y si bien va afuncionar de manera correcta React nos arrojara un error, esto debido a que al momento de Map retornar un elemento por cada iteracion, React necesita que cada elemento tenga una key unica para poder identificarlo y asi poder hacer un seguimiento de este, por lo que si no le pasamos una key unica React nos arrojara un error, por lo que para solucionar esto simplemente podemos pasarle a nuestro componente Item una key unica, la cual puede ser el nombre del curso o cualquier otra propiedad que sea unica para cada objeto dentro de nuestro arreglo, de esta manera React podra identificar cada elemento y no nos arrojara ningun error. Si bien esta key a nostoros no nos sirve de nada, React la utiliza para poder identificar cada elemento y asi poder hacer un seguimiento de este, por lo que es importante que cada elemento tenga una key unica. Por lo que el codigo final quedaria de la siguiente manera:
-{arreglo.map(item => <Item nombre={item.nombre} visto={item.visto} key={item.nombre}></Item>)}
+// ~Key única por iteración de map.
+// ~Ahora bien, nosotros podemos simplemente crear e implementar el uso de `map()` exactamente como en el ejemplo anterior, y aunque el código funcionará y los elementos podrán mostrarse correctamente en pantalla, React nos arrojará una advertencia relacionada con las **keys**. Esto sucede porque cada vez que `map()` retorna un elemento por cada iteración, React necesita una forma de identificar de manera única cada uno de esos elementos. Para ello utiliza una propiedad especial llamada `key`, la cual permite que React pueda reconocer qué elemento corresponde a cada posición y llevar un seguimiento de ellos cuando la lista cambia, se actualiza, se agregan elementos o se eliminan. Esto es especialmente importante para que React pueda realizar correctamente sus procesos de actualización y reconciliación sin tener que volver a construir innecesariamente toda la lista. Por lo tanto, cuando utilizamos `map()` para renderizar componentes o elementos JSX, es necesario proporcionar una `key` única para cada elemento generado. Para solucionar esto simplemente podemos pasarle a nuestro componente `Item` una propiedad `key` cuyo valor sea una propiedad que identifique de manera única a cada objeto, como podría ser un ID, un código único o, en este caso de ejemplo, el nombre del curso siempre y cuando sepamos que dicho nombre no se repetirá. Es importante destacar que esta `key` **no es un Prop normal** que el componente hijo pueda recibir y utilizar mediante `props.key`; React la utiliza internamente para identificar los elementos y optimizar el proceso de renderizado. Por esta razón, aunque a nosotros no nos sirva directamente dentro del componente `Item`, sí es fundamental para que React pueda realizar correctamente el seguimiento de cada elemento. Por lo tanto, el código final quedaría de la siguiente manera:
+{arreglo.map(item => <Item nombre={item.nombre} visto={item.visto} key={item.nombre}></Item>)} //* En cada iteración se agrega una key única para que React pueda identificar correctamente cada elemento generado.
 
-
+// ~Atomic Design.
+// ~Como bien se ha estado mostrando en estas ultimas secciones nos adentramos cada vez mas en el Atomic Design, el cual es un metodología que nos permite estructurar y organizar nuestros componentes de manera más eficiente y escalable. Esta metodología se basa en la idea de construir interfaces de usuario a partir de componentes más pequeños y reutilizables, siguiendo una jerarquía que va desde los elementos más básicos hasta los más complejos. En el Atomic Design, los componentes se clasifican en cinco niveles: átomos, moléculas, organismos, plantillas y páginas. Los átomos son los elementos más simples, como botones, inputs o etiquetas; las moléculas son combinaciones de átomos que forman unidades funcionales; los organismos son grupos de moléculas que constituyen secciones completas de la interfaz; las plantillas definen la estructura general de una página; y finalmente, las páginas representan la instancia final de la interfaz con contenido real. Al aplicar el Atomic Design en nuestros proyectos de React, podemos mejorar la mantenibilidad del código, facilitar la reutilización de componentes y crear interfaces más consistentes y coherentes.  
