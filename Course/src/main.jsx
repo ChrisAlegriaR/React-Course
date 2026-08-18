@@ -4,10 +4,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 // import './index.css'
-import Listado from './notes/11-Map'
+import Clases from './notes/12-ClassName'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Listado />
+    <Clases />
   </StrictMode>,
 )

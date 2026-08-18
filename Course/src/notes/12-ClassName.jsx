@@ -1,0 +1,15 @@
+// ^ClassName.
+// ^Como bien sabemos, dentro de la implementación y el trabajo con HTML junto con JavaScript puro podemos utilizar la propiedad `class` dentro de nuestros elementos HTML para asignarles una determinada clase CSS y posteriormente, mediante un selector como `.nombreClase`, aplicar ciertos estilos únicamente a los elementos que tengan dicha clase. Sin embargo, cuando trabajamos dentro de React y utilizamos JSX, existe una pequeña diferencia importante que debemos tomar en cuenta. Aunque JSX tiene una sintaxis muy parecida a HTML, realmente está siendo transformado y utilizado dentro de JavaScript, por lo que `class` entra en conflicto con una palabra reservada propia del lenguaje JavaScript. Debido a esto, si dentro de un componente React intentamos utilizar directamente la propiedad `class`, React podrá mostrar una advertencia en consola indicando que dicha propiedad no es la forma correcta de asignar una clase CSS dentro de JSX. En su lugar, debemos utilizar **`className`**, que es la propiedad que React utiliza para representar las clases CSS dentro de los elementos JSX. Por lo tanto, cuando queramos aplicar estilos a nuestros elementos dentro de React, debemos sustituir `class` por `className`. Es importante destacar que este cambio no modifica la manera en la que funcionan nuestras clases CSS ni la forma en la que escribimos los selectores dentro del archivo `.css`, ya que continuaremos utilizando exactamente la misma sintaxis `.nombreClase`. La única diferencia se encuentra en la propiedad utilizada dentro del JSX para asociar dicha clase al elemento. Esto significa que `className` continúa cumpliendo exactamente la misma función conceptual que `class` en HTML: establecer una o varias clases CSS sobre un elemento, permitiendo posteriormente aplicar los estilos correspondientes y manteniendo una estructura consistente dentro de nuestra aplicación React.
+import '../styles/12-ClassName.css' //* Importa el archivo CSS para que las clases declaradas dentro de él puedan utilizarse en este componente.
+
+// *Componente encargado de demostrar la diferencia entre class y className.
+function Clases() { //* Se declara el componente funcional Clases.
+    return ( //* Se retorna el contenido JSX que será renderizado en el DOM.
+        <> //* Fragment utilizado para agrupar ambos elementos sin generar un nodo adicional.
+            <h1 class="claseNormal">Titulo con clase de tipo normal (class).</h1> //* Se utiliza la propiedad class como en HTML tradicional; aunque puede mostrarse, React indicará que debe utilizarse className.
+            <h1 className="claseTipoName">Titulo con clase de tipo name (className).</h1> //* Se utiliza la propiedad correcta de React para asignar la clase CSS al elemento JSX.
+        </> //* Fin del Fragment.
+    ); //* Fin del return.
+} //* Fin del componente.
+
+export default Clases; //* Exporta el componente como exportación por defecto.
