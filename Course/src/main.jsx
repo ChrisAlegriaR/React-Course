@@ -3,11 +3,11 @@
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import Formulario from './notes/13-Formulario'
 // import './index.css'
-import Clases from './notes/12-ClassName'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Clases />
+    <Formulario />
   </StrictMode>,
 )
