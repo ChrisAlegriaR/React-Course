@@ -28,4 +28,24 @@ function NombreComponente() { //* Se declara el componente funcional donde utili
     ); //* Finaliza el return.
 } //* Finaliza el componente.
 
-export default NombreComponente; //* Se exporta el componente para poder utilizarlo desde otros archivos.
+export { NombreComponente }; //* Se exporta el componente para poder utilizarlo desde otros archivos.
+
+// ?Igualacion o asignacion de variable useState mediante otra variable.
+// ?Dentro de React, debemos tener mucho cuidado con la forma en la que actualizamos una variable administrada mediante `useState`. Si bien en JavaScript puro estamos acostumbrados a utilizar el operador `=` para asignar directamente un nuevo valor a una variable, con una variable creada mediante `useState` **no debemos modificar directamente su valor utilizando una asignación tradicional**. En su lugar, React nos proporciona una segunda función, comúnmente conocida como función `set`, que es la encargada de actualizar el estado y notificar a React que dicho valor ha cambiado, provocando posteriormente un nuevo renderizado del componente. Por lo tanto, si tenemos un estado como `[nombre, setNombre]`, no debemos intentar realizar algo como `nombre = nombre2`, ya que estaríamos intentando modificar directamente el estado. Para actualizarlo debemos utilizar `setNombre(valorNuevo)`. Ahora bien, es perfectamente válido que el nuevo valor provenga de otra variable; por ejemplo, podemos tener `const nombre2 = 'Pedro'` y posteriormente llamar `setNombre(nombre2)`. En este caso no estamos igualando directamente el estado con `=`, sino que estamos **utilizando la función setter para indicarle a React cuál debe ser el nuevo valor**. Esto es precisamente lo importante de este ejemplo. Además, debemos tener mucho cuidado con el lugar donde ejecutamos el `set`, ya que una actualización de estado provoca un nuevo renderizado y, si llamamos al setter directamente durante el cuerpo del componente en cada renderizado, React volverá a ejecutar el setter, provocando nuevamente otro renderizado y pudiendo generar un **ciclo de renderizado infinito**. Por esta razón, aunque podemos pasar otra variable como argumento al setter, dicha actualización normalmente debe realizarse como consecuencia de un evento, un efecto o alguna otra condición controlada. Para este caso, únicamente es necesario utilizar la función `set` correspondiente al estado y pasarle como argumento la variable que contiene el nuevo valor. El setter se encargará de actualizar internamente el estado y React será quien administre el nuevo valor y el renderizado correspondiente. Por lo tanto, no es necesario ni recomendable modificar directamente la variable que representa el estado mediante `=`, ya que React necesita controlar ese estado mediante la función setter.
+function Igualacion() { //* Se declara el componente funcional Igualacion.
+    const [nombre, setNombre] = useState('jesus'); //* Se declara el estado nombre con su función setNombre y se establece "jesus" como valor inicial.
+
+    const nombre2 = 'Pedro'; //* Se declara una variable independiente que contiene el nuevo valor que queremos utilizar.
+
+    setNombre(nombre2); //* Se utiliza la función setter para actualizar el estado nombre utilizando el valor almacenado en nombre2.
+    //* **Importante:** aunque esta forma utiliza correctamente el setter, ejecutarlo directamente dentro del cuerpo del componente hará que React intente actualizar el estado durante cada renderizado y puede provocar un ciclo de renderizado infinito.
+    //* **Buena práctica:** las actualizaciones de estado normalmente deben realizarse mediante eventos, efectos o alguna condición que controle cuándo debe ejecutarse el setter.
+
+    return ( //* Se retorna el contenido JSX del componente.
+        <> //* Fragment utilizado para agrupar el contenido.
+            <p>{nombre}</p> //* Se muestra el valor actual del estado nombre dentro del DOM.
+        </> //* Fin del Fragment.
+    ); //* Fin del return.
+} //* Fin del componente.
+
+export { Igualacion }; //* Se exporta el componente mediante una exportación nombrada.
