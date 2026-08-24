@@ -1,6 +1,10 @@
 // ^Comuniocación entre componentes.
 // ^
+// ~Paso de set de variable de tipo useState de padre a hijo
+// ~
 
+// ~Ejemplo con implementacion de paso de set entre padrte e hijo.
+// ~
 import { useState } from "react";
 
 function Item({nombre, edad}) {
