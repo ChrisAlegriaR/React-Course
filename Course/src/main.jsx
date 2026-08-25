@@ -3,11 +3,11 @@
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import ComponentePadre from './notes/14-Comunicacion-Entre-Componentes';
+import { ComponentePadre1 } from './notes/14-Comunicacion-Entre-Componentes';
 // import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ComponentePadre />
+    <ComponentePadre1 />
   </StrictMode>,
 ); 
