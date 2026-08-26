@@ -3,7 +3,7 @@
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ComponentePadre1 } from './notes/14-Comunicacion-Entre-Componentes';
+import { ComponentePadre1 } from './notes/15-Envio-De-Info-Desde-Child';
 // import './index.css'
 
 createRoot(document.getElementById('root')).render(
