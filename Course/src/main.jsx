@@ -3,11 +3,11 @@
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ComponenteUsuarios } from './notes/16-UseEffect-&-Fetch';
+import { ComponenteConUseEffectConDependencias, ComponenteUsuarios } from './notes/16-UseEffect-&-Fetch';
 // import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ComponenteUsuarios />
+    <ComponenteConUseEffectConDependencias />
   </StrictMode>,
 ); 
