@@ -1,2 +1,8 @@
 // ^Build & dist.
-// ^
+// ^Bien sabemos que para desgloisar o ejecutar una pagina web dentro de un servidor en produccioon o final deberemos de generar un build, donbde dicho servidor ejecutara el vbuild genberado para asi poder ser accesado a el mismo. Por lo que en React si bien trabajamos con componentes, archivos JSX, y mucho mas, al momento de geenrar una build unicamente se generara un HTML, CSS y un JS, esto debido a que el servidor no entiende ni procesa archivos JSX, ni componentes, ni nada de lo que React nos ofrece, por lo que al momento de generar un build se generara un HTML, CSS y JS que el servidor si podra procesar y ejecutar. Por lo que la build generada contendra absdolutamente todo lo que usamos en React, pero en un formato que el servidor pueda entender y ejecutar. Ademas como bien vimos previamente existe el strict mode el cual por ejemplo retorna 2 veces el componente, esto es algo que no se vera reflejado en la build generada, ya que el strict mode es solo para desarrollo y no para produccion. Por lo que al momento de generar una build, el strict mode no se ejecutara y por ende no se retornara 2 veces el componente, sino que se retornara una sola vez.
+// ~Comando para la generacion del build mediante React.
+// ~Para poder generar un build mediante React es relativamente sencillo, esto debido a que si mantenemos el comando de generacion de buil dentro de nuestro package.json sin modificar y por defecto, mediante el comando "npm run buil" podremos generar dicho build. Por el contrario si se modifico el comando de generacion de build en package.json se debera ejecutar "npm run nombreVariableBuil", para poder ejecutarlo.
+// *npm run build
+
+// ~
+
