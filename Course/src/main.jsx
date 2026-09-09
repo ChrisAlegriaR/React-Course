@@ -3,11 +3,11 @@
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Componente from './notes/18-Custom-Hook';
+import Componente3 from './notes/18-Custom-Hook';
 // import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Componente />
+    <Componente3 />
   </StrictMode>,
 ); 
