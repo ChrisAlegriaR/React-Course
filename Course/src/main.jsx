@@ -3,7 +3,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { HooksApps } from './notes/19-Bootstrap';
-// import './index.css'
+import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
