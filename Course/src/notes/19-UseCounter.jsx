@@ -1,30 +1,31 @@
 // ^UseCounter.
-// ^Ahora dentro de este pequeño ejercicio y ejemplo practico crearemos uin contador en el cual el objetivo es pasar nosotros desde el codigo el valor a incrementar o redusir e inckysiuve pasar el valor inicial al hook ubicado en otro archivo, donde lo que se vera en esta seccion es que dentro de una funcion o un hook podemos retornar en un obketo cierta informacion o funciones que este contewnga. Por lo que dentro de el hook se crearon la variable usestate que almacenara el ocntador y las funciones de disminuir, resetar e incrementar, donde posteriormente se retornartan y estas podxran ser desestrcuturadas para poder usaralas a njuestra libertad por lo que esto es de demasiada utolizd ya que de esta manera podemos implementar desde hooks funciones o variables y mucho mas donde posteriormente dicho hook retornara dichas funciones y variables para poder ser usadas en cualquier componente que lo importe, pudiendo asi usar funciones y variables de manera global y sin necesidad de estar repitiendo codigo, por lo que esto es de gran utilidad para el desarrollo de aplicaciones web con react. Mienteas que por otra parte podemos ver que como bien se comento en las secciones iniciales dentro de React para un evento no es necesario agrergar () al final de la funcion ya que esto hara que se ejecute de manera inmediata y no cuando el evento se dispare, por lo que es importante tener en cuenta este detalle para evitar errores en el desarrollo de aplicaciones web con React. Pero ahora bien si queremos pasar parametros a la funcion que se ejecutara al momento de dispararse el evento, entonces si es necesario agregar () al final de la funcion y dentro de estos pasar los parametros que se requieran, ademas de implementar una funcion flecha para que esta se ejecute de manera correcta en el evento y no de manera inmediata, por lo que es importante tener en cuenta este detalle para evitar errores en el desarrollo de aplicaciones web con React. Por lo que la estructura de funciones con parametros en eventos dentro de React es la siguiente: onClick={() => funcion(parametro)}.
-import useCounter from "../hooks/19-UseCounter";
+// ^Ahora, dentro de este pequeño ejercicio y ejemplo práctico, crearemos un contador en el cual el objetivo es poder pasar nosotros, desde el código, el valor que queremos incrementar o reducir e incluso pasar el valor inicial al Hook ubicado en otro archivo. Lo que veremos principalmente en esta sección es que dentro de una función, y específicamente dentro de un Custom Hook, podemos retornar dentro de un objeto cierta información, variables o funciones que este contenga. Esto nos permite encapsular una determinada lógica y posteriormente exponer únicamente aquello que necesitamos utilizar desde el componente. Por lo tanto, dentro del Hook se creó la variable de estado utilizando useState, la cual almacenará el valor actual del contador, además de las funciones encargadas de disminuir, resetear e incrementar dicho contador. Posteriormente, estas funciones y el valor del contador serán retornados desde el Hook y podrán ser desestructurados para utilizarlos con total libertad dentro del componente que consuma dicho Hook. Esto es de demasiada utilidad, ya que de esta manera podemos implementar dentro de nuestros Custom Hooks funciones, variables, estados y lógica reutilizable, para posteriormente retornar toda esa información y utilizarla desde cualquier componente que importe y ejecute el Hook. Así podemos reutilizar funciones y lógica sin necesidad de estar repitiendo el mismo código constantemente, lo que permite mantener nuestras aplicaciones más organizadas, reutilizables y fáciles de mantener. Es importante aclarar que esto no significa que las variables o funciones se vuelvan realmente "globales" en toda la aplicación. Lo que sucede es que la lógica encapsulada dentro del Custom Hook puede ser reutilizada por múltiples componentes, y cada componente que ejecute el Hook tendrá su propia instancia de su estado. Por esta razón, los Custom Hooks son una herramienta de gran utilidad para desarrollar aplicaciones web con React, especialmente cuando necesitamos reutilizar lógica relacionada con estados, efectos, eventos o cualquier otro comportamiento. Mientras que, por otra parte, podemos recordar que, como bien se comentó en las secciones iniciales, dentro de React, cuando asignamos una función a un evento, no es necesario agregar () al final de la función cuando simplemente queremos pasar la referencia de dicha función. Esto se debe a que agregar () provocaría que la función se ejecute inmediatamente durante el renderizado, en lugar de esperar a que ocurra el evento. Por lo tanto, es importante tener muy presente este detalle para evitar errores durante el desarrollo de aplicaciones web con React. Por ejemplo, si tenemos un botón y escribimos onClick={funcion}, estamos indicando que cuando ocurra el evento click React deberá ejecutar esa función. En cambio, si escribimos onClick={funcion()}, estaremos ejecutando la función en ese mismo momento y pasando su resultado al evento. Ahora bien, si queremos pasar parámetros a la función que se ejecutará al momento de dispararse el evento, entonces sí necesitamos realizar una llamada a la función dentro de otra función. Para ello normalmente utilizamos una función flecha, de manera que la llamada solamente ocurra cuando React ejecute el manejador del evento y no inmediatamente durante el renderizado. Por lo tanto, la estructura para ejecutar una función con parámetros dentro de un evento en React es la siguiente: onClick={() => funcion(parametro)}, aquí la función flecha funciona como un intermediario: React ejecuta la función flecha cuando ocurre el evento y, dentro de ella, nosotros ejecutamos la función original enviándole el parámetro requerido. Este patrón es especialmente útil cuando necesitamos utilizar valores específicos, como números, cadenas de texto, objetos o cualquier otro dato que queramos enviar a la función que manejará el evento.
+import useCounter from "../hooks/19-UseCounter"; //* Importamos nuestro Custom Hook useCounter desde el archivo donde se encuentra definida la lógica reutilizable del contador.
 
-function ContadorComponent() {
+function ContadorComponent() { //* Creamos el componente encargado de utilizar y mostrar el contador.
 
-    const { contador, incrementar, resetear, disminuir } = useCounter(0);
+    const { contador, incrementar, resetear, disminuir } = useCounter(0); //* Ejecutamos el Custom Hook y le enviamos 0 como valor inicial del contador. El Hook retorna un objeto con el estado y las funciones necesarias, las cuales desestructuramos para utilizarlas directamente.
 
-    return (
-        <>
-            <h2>Contador: {contador}</h2>
-            <br />
-            <button onClick={() => incrementar(1)}>+1</button>
-            <button onClick={() => resetear()}>Resetear</button>
-            <button onClick={() => disminuir(1)}>-1</button>
-        </>
-    );
-}
+    return ( //* Retornamos la interfaz que será renderizada por el componente.
+        <> //* Utilizamos un Fragment para agrupar los elementos sin agregar un nodo adicional al DOM.
+            <h2>Contador: {contador}</h2> //* Mostramos en pantalla el valor actual del contador almacenado en el estado del Custom Hook.
+            <br /> //* Agregamos un salto de línea para separar visualmente el contador de los botones.
+            <button onClick={() => incrementar(1)}>+1</button> //* Cuando el usuario hace clic, ejecutamos una función flecha que llama a incrementar enviándole 1 como parámetro, por lo que el contador aumentará en una unidad.
+            <button onClick={() => resetear()}>Resetear</button> //* Cuando se hace clic, ejecutamos la función resetear. En este caso no necesita parámetros, pero se utiliza igualmente una función flecha para mantener el mismo patrón de ejecución diferida.
+            <button onClick={() => disminuir(1)}>-1</button> //* Cuando el usuario hace clic, ejecutamos disminuir enviándole 1 como parámetro, haciendo que el contador reduzca su valor en una unidad.
+        </> //* Finalizamos el Fragment.
+    ); //* Finalizamos el return del componente.
+} //* Finalizamos el componente ContadorComponent.
 
-function ComponentePrincipal() {
-    return (
-        <>
-            <h1>Contador</h1>
-            <hr />
-            <ContadorComponent />
-        </>
-    );
-}
+function ComponentePrincipal() { //* Creamos el componente principal que será el encargado de mostrar el título y posteriormente renderizar nuestro contador.
 
-export default ComponentePrincipal;
+    return ( //* Retornamos la estructura principal del componente.
+        <> //* Utilizamos un Fragment para agrupar los elementos.
+            <h1>Contador</h1> //* Mostramos el título principal de esta sección.
+            <hr /> //* Agregamos una línea horizontal para separar el título del contenido.
+            <ContadorComponent /> //* Renderizamos el componente que contiene toda la lógica y visualización del contador.
+        </> //* Finalizamos el Fragment.
+    ); //* Finalizamos el return del componente principal.
+} //* Finalizamos el componente ComponentePrincipal.
+
+export default ComponentePrincipal; //* Exportamos el componente principal para poder importarlo y utilizarlo desde otro archivo de nuestra aplicación.
