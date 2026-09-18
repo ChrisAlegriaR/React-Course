@@ -3,7 +3,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import ComponentePrincipal from './notes/21-Formulario-Con-Hook';
-// import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
