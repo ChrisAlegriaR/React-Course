@@ -11,6 +11,7 @@ export default function ComponenteFormulario() {
 
     const inputChange = (event) => { //*Agregar que se puede leer desde el event quien ejecuta la funcion en el evento
         console.log(event.target.name);
+        console.log(event.target.valu);
     }
 
     return (
