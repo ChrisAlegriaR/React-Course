@@ -9,7 +9,7 @@ export default function ComponenteFormulario() {
 
     const { userName, email, password} = useState; //*Agregar que se pueden declarar en un usestate diferntes valores y desestructurarlo para mediante el usop del state del objeto actualizar mediane su set cualquiervalor
 
-    const inputChange = (event) => { //*Agregar que se puede leer desde el event quien ejecuta la funcion en el evento
+    const inputChange = (event) => { //*Agregar ademas que mediante event no solo nos permite recibir y ver informacion de que elemento ejecuto el evento y mediante este evento se genera una especie de reporte (event) desee el cual podemos hacceder no solamente a el valor del input que ejecuto el evento si n oincluso al nombre, id y propiedades de estos elementos.
         console.log(event.target.name);
         console.log(event.target.valu);
     }
