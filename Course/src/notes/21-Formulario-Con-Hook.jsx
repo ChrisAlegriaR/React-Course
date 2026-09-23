@@ -1,4 +1,4 @@
-import ComponenteFormulario from '../components/21-Formulario-Con-Hook'
+import { ComponenteFormulario } from '../components/21-Formulario-Con-Hook'
 import '../styles/21-Formulario-Con-Hook.css'
 
 export default function ComponentePrincipal() {
