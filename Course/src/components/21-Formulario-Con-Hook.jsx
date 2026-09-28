@@ -92,7 +92,7 @@ function ComponenteFormulario() {
     }
 
     return (
-        <form>
+        <form onSubmit={onSubmit}>
             <div className="form-group">
                 <label htmlFor="userName">User Name</label>
                 <input type="text" className="form-control" name="userName" placeholder="Enter tour user name" onChange={onInputChange}/>
@@ -106,7 +106,7 @@ function ComponenteFormulario() {
                 <label htmlFor="password">Password</label>
                 <input type="password" className="form-control" name="password" placeholder="Password" onChange={onInputChange}/>
             </div>
-            <button type="submit" className="btn btn-primary" onClick={onSubmit}>Submit</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     )
 }
