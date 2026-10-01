@@ -1,14 +1,25 @@
 // ^UseRef
-// ^UseRef es un Hook que React contiene de forma nativa, este como su nombre lo indica (ref), es un Hook de referencia, y comunmente se utiliza para enlazar un pedacito de JSX (apartado HTML), a una informacion para retenerla como referencia, donde esta referencia pese a que se re-renderice el componente se ca a seguir manteniendo. Por lo que esta nos permite mantener la referencia en uno de los elementos del DOOM. Por lo que al ser useRef un Hook se debera de importar dicho Hook desde la libreria de React, para poder utilizarlo dentro de un componente funcional. Donde este Hook nos permite crear una referencia mutable que persiste durante todo el ciclo de vida del componente, lo que significa que podemos acceder y modificar el valor de la referencia sin causar un re-renderizado del componente. Esto es especialmente útil cuando necesitamos mantener el estado de un elemento del DOM o almacenar valores que no deberían desencadenar una actualización de la interfaz de usuario. En resumen, useRef es una herramienta poderosa en React que nos permite trabajar con referencias a elementos del DOM y mantener valores persistentes sin afectar el rendimiento de nuestra aplicación.
-import { useRef } from "react";
+// ^`useRef` es un Hook que React contiene de forma nativa y, como su propio nombre lo indica, está relacionado con el concepto de **referencias**. Este Hook se utiliza principalmente para mantener una referencia persistente hacia un valor o hacia un elemento específico del DOM, permitiéndonos conservar dicha referencia incluso cuando nuestro componente vuelva a renderizarse. A diferencia de una variable normal, cuyo valor podría volver a crearse durante cada renderizado, `useRef` nos proporciona un objeto cuya referencia permanece estable durante toda la vida del componente. Por esta razón, comúnmente se utiliza para enlazar un elemento de JSX (es decir, una representación de un elemento HTML dentro de React) con una referencia que podremos consultar posteriormente desde JavaScript. Esta referencia puede utilizarse para tener acceso directo a un elemento específico del DOM y realizar determinadas acciones sobre él. Por ejemplo, podemos utilizar `useRef` para enfocar automáticamente un input, seleccionar texto, reproducir o pausar un video, medir las dimensiones de un elemento, hacer scroll hacia determinada sección o acceder a diferentes propiedades y métodos disponibles en un elemento del DOM. Por lo tanto, podemos entender `useRef` como una especie de **referencia persistente** que nos permite mantener localizado un elemento concreto incluso aunque el componente vuelva a renderizarse. Como `useRef` es un Hook, deberá importarse desde la librería de React antes de poder utilizarlo dentro de un componente funcional. Al igual que ocurre con `useState`, podemos declarar una constante utilizando el Hook mediante una estructura como `const nombreVariable = useRef()`. Cuando hacemos esto, React crea un objeto de referencia asociado a esa variable. Posteriormente, al colocar `ref={nombreVariable}` dentro de un elemento JSX, React enlazará automáticamente dicho elemento con nuestra referencia. A partir de ese momento, podremos acceder al elemento mediante la propiedad `.current` de la referencia. Es precisamente esta propiedad la que funciona como nuestro "control remoto" del elemento, ya que nos permite interactuar con el nodo real del DOM que fue asociado a la referencia. Por ejemplo, después de que el componente se haya montado, `nombreVariable.current` podrá apuntar directamente al elemento HTML correspondiente y podremos utilizar sus propiedades y métodos. Esto resulta especialmente útil porque `useRef` **no provoca un nuevo renderizado cuando su valor cambia**, a diferencia de `useState`. Por lo tanto, si modificamos una referencia, React no volverá a renderizar automáticamente el componente; simplemente conservará el nuevo valor dentro de `.current`. En resumen, `useRef` es un Hook extremadamente útil para mantener referencias persistentes y, especialmente, para interactuar de manera controlada con elementos específicos del DOM cuando necesitamos realizar acciones que no pueden resolverse únicamente mediante Props, estados o el flujo normal de renderizado de React.
+// *Importación de los Hooks necesarios para trabajar con la referencia y ejecutar una acción después del renderizado.
+import { useEffect, useRef } from "react"; //* Se importan useEffect y useRef desde React.
 
-export const UseRefComponente = () => {
-    const first = useRef()
-    console.log(first)
-    return (
-        <form>
-            <label htmlFor="texto">Nombre: </label>
-            <input ref={first} name="texto" type="text" placeholder="Ingresa tu nombre." />
-        </form>
-    )
-}
+// *Componente encargado de demostrar el uso de useRef sobre un elemento input.
+export const UseRefComponente = () => { //* Se declara y exporta el componente funcional.
+
+    const first = useRef() //* Se crea una referencia mediante useRef y se almacena dentro de la constante first.
+    console.log(first); //* Se muestra en consola el objeto de referencia para poder observar su estructura y posteriormente comprobar su propiedad current.
+
+    useEffect(() => { //* Se crea un efecto que se ejecutará después de que el componente haya sido renderizado y los elementos del DOM hayan sido montados.
+        first.current.focus() //* Se accede mediante current al elemento asociado a la referencia y se ejecuta focus() para colocar automáticamente el cursor dentro del input.
+    }, []) //* El arreglo de dependencias vacío indica que este efecto se ejecutará después del montaje inicial del componente.
+
+    return ( //* Se retorna la estructura JSX del formulario.
+        <form> //* Se crea el formulario que contendrá los diferentes campos de entrada.
+            <label htmlFor="nombre">Nombre: </label> //* Se declara la etiqueta asociada al campo de nombre mediante htmlFor.
+            <input ref={first} name="nombre" type="text" placeholder="Ingresa tu nombre." /> //* Se asigna la referencia first al input mediante ref; cuando React monte este elemento, first.current apuntará directamente hacia este nodo del DOM.
+            <br /> //* Se agrega un salto de línea para separar los campos del formulario.
+            <label htmlFor="contrasena">Contraseña: </label> //* Se declara la etiqueta correspondiente al campo de contraseña.
+            <input type="password" name="contrasena" placeholder="Ingresa tu contraseña"/> //* Se declara el segundo input, que en este caso no tiene ninguna referencia asociada.
+        </form> //* Fin del formulario.
+    ) //* Fin del return.
+} //* Fin del componente.
