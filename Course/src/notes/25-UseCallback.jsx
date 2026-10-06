@@ -5,6 +5,8 @@
 import { useState } from "react"
 
 export const Incrementar = ({incrementar}) => {
+    console.log('Me estoy redibujando.');
+    
     return (
         <button onClick={incrementar}>+1</button>
     )
