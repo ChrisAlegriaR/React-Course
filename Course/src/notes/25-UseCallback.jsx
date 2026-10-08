@@ -6,17 +6,17 @@ import { useState } from "react"
 
 export const Incrementar = ({incrementar}) => {
     console.log('Me estoy redibujando.');
-    
+
     return (
-        <button onClick={incrementar}>+1</button>
+        <button onClick={() => incrementar(10)}>+1</button>
     )
 }
 
 export const ComponenteParaUseCallback = () => {
     const [counter, setCounter] = useState(0);
 
-    const incrementarPadre = () => {
-        setCounter(counter + 1);
+    const incrementarPadre = (valorEnviado) => {
+        setCounter(counter + valorEnviado);
     }
 
     return (
