@@ -20,8 +20,21 @@ const initialState = { //* Declaramos el estado inicial que utilizaremos como pu
     finalizada: false //* Indicamos mediante un valor booleano que la tarea todavía no ha sido finalizada; false significa que permanece pendiente y true indicaría que ya se completó.
 }; //* Finalizamos la declaración del objeto que contiene el estado inicial de nuestra tarea.
 
-const tareaReducer = (initialState, action) => { //* Declaramos la función reducer que recibirá el estado actual de la tarea y la acción que se desea ejecutar sobre dicho estado.
+const nuevaTarea = {
+    id: 2,
+    tarea: 'Explicar useReducer',
+    finalizada: false
+}
+
+action = {
+    type: '[TAREAS] Agregar tarea',
+    payload: nuevaTarea
+
+}
+
+const tareaReducer = (state = initialState, action = {}) => { //* Declaramos la función reducer que recibirá el estado actual de la tarea y la acción que se desea ejecutar sobre dicho estado.
     // Aquí implementaremos posteriormente la lógica necesaria para identificar el tipo de acción recibida y retornar el nuevo estado de la tarea sin modificar directamente el estado actual.
+    
 }; //* Finalizamos la declaración del reducer; por el momento, esta función todavía no retorna un estado, por lo que su lógica deberá completarse antes de utilizarla como un reducer funcional dentro de React.
 
 export const ListaTareas = () => { //* Declaramos y exportamos un componente funcional de React que posteriormente podremos utilizar para mostrar y administrar nuestra lista de tareas.
