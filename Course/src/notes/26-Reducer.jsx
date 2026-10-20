@@ -29,17 +29,33 @@ const nuevaTarea = {
 action = {
     type: '[TAREAS] Agregar tarea',
     payload: nuevaTarea
+}
 
+const agregarTarea = {
+    type: '[TAREAS] Agregar tarea',
+    payload: nuevaTarea
+}
+
+const eliminarTarea = {
+    type: '[TAREAS] Eliminar tarea',
+    payload: nuevaTarea
+}
+
+const modificarTarea = {
+    type: '[TAREAS] Modificar tarea',
+    payload: nuevaTarea
 }
 
 const tareaReducer = (state = initialState, action = {}) => { //* Declaramos la función reducer que recibirá el estado actual de la tarea y la acción que se desea ejecutar sobre dicho estado.
     // Aquí implementaremos posteriormente la lógica necesaria para identificar el tipo de acción recibida y retornar el nuevo estado de la tarea sin modificar directamente el estado actual.
-    if(action.type === '[TAREAS] Agregar tarea'){
-        return [...state, action.payload];
+    switch(action.type) {
+        case ''
     }
-    
-    
+
+    return state
 }; //* Finalizamos la declaración del reducer; por el momento, esta función todavía no retorna un estado, por lo que su lógica deberá completarse antes de utilizarla como un reducer funcional dentro de React.
+
+
 
 export const ListaTareas = () => { //* Declaramos y exportamos un componente funcional de React que posteriormente podremos utilizar para mostrar y administrar nuestra lista de tareas.
     return (
