@@ -1,2 +1,2 @@
 // ^UseReducer.
-// ^UseReducer es de igual forma un Hook, el cual 
+// ^UseReducer es de igual forma un Hook, el cual contiene toda la base vista en la seccion aenterior de reducer, en el cual el hook al igual que el ejemplo de la seccion previa es una funcion a la cual se le pasan 2 parametros siendo estos un estado inicial y una funcion reductora o una funcion que sera la encargada de actualizar el estado, por lo que una vez que pasemos un estado inicial mediante el hook useReducer este nos devolvera un arreglo con 2 elementos, el primero de ellos sera el estado actual o modificado y el segundo sera una funcion que sera la encargada de actualizar el estado.
