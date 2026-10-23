@@ -3,9 +3,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ListaTareas } from './notes/26-Reducer';
+import { SopaComponent } from './notes/27-UseReducer';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ListaTareas />
+    <SopaComponent />
   </StrictMode>,
 );
