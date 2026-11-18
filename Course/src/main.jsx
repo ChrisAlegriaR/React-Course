@@ -3,9 +3,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { MainApp } from './notes/28-React-Router-DOM';
+import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <MainApp />
-  </StrictMode>,
+  <BrowserRouter>
+    <StrictMode>
+      <MainApp />
+    </StrictMode>,
+  </BrowserRouter>
 );
